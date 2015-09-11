@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wilih=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>KKPLAY</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleadd.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/cycle2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/classtype.js" type="text/javascript"></script>
+    <script src="js/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/masonry-docs.min.js"type="text/javascript"></script>
+	
+	<!-----------popup----->
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+	<!-----------popup----->	
+	<!-----------news----->	
+	<script src='js/news.js'></script>
+	<!-----------news----->	
+	
+</head>
+<body class="main_bg">
+
+      <script>
+	  $().ready(function(){
+		$('#top_nav').load('nav.html');
+	  });
+	  </script>
+      <div id="top_nav"></div>
+
+
+    <div class="news_bar news_content container clear">
+        <div class="title box_title">
+            <h5>最新消息</h5>
+        </div>
+		
+		<!---
+        <div class="search_bar col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+            <select name="" id="">
+                <option value="">All section</option>
+            </select>
+            <input type="text" placeholder="搜尋消息">
+            <button>搜尋</button>
+        </div>
+		--->
+	
+	
+    
+        <div class="col-md-8 col-sm-8 col-xs-12 col-md-offset-2 col-sm-offset-2 clear">
+            <div class="clear">
+           
+                    <ul id='news_data' class="news_main">
+                    </ul>
+
+            </div>
+        </div>
+        <ul class="news_con">
+        </ul>
+		<!---
+        <ul class="news_con">
+            <li><a href="#"><<</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li>...</li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">>></a></li>
+        </ul>
+		----->
+    </div>
+		  <!------NEWS dialog---------------->
+		<div id="dialog" title="NEWS">
+			<iframe  id="dialogIFame"  width="100%"   height="100%"  src="" frameborder="0" allowfullscreen></iframe>
+		</div>
+		 
+		
+<!---------------------->
+	
+      <script>
+	  $().ready(function(){
+		$('#foot_nav').load('foot.html');
+	  });
+	  </script>
+      <div id="foot_nav"></div>
+    
+
+</body>
+</html>

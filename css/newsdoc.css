@@ -1,0 +1,13 @@
+body {
+     padding-top: 0px; 
+}
+.news_bar {
+
+     margin-top: 00px; 
+}
+
+.news_bar.news_content {
+    min-height: 720;
+	padding-bottom: 0px;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Examples</title>
+<link href="css/popup_view.css" rel="stylesheet">
+</head>
+<body>
+    <button id="btn_1">Click popup 1</button>
+
+    <button id="btn_2">Click popup 2</button>
+
+    <button id="btn_3">Click popup 3</button>
+
+    <div id="popup_1" class="pop_up popup_hide" style="height:90%";>        
+		<h2></h2>
+        <div class="pop_up_close"></div>
+		<div style="text-align:center;">
+			<iframe src="http://stable.booz.tw" width="95%" height="90%" seamless></iframe>
+		</div>
+    </div>
+
+    <div id="popup_2" class="pop_up popup_hide">
+        <h2>2</h2>
+        <div class="pop_up_close"></div>
+    </div>
+
+    <div id="popup_3" class="pop_up popup_hide">
+        <h2>3</h2>
+        <div class="pop_up_close"></div>
+    </div>
+
+</body>
+<script src="js/popup_view.js"></script>
+<script>
+var popupView = new popup();
+
+document.querySelector('#btn_1').addEventListener('click', function () {
+    popupView.show(document.querySelector('#popup_1'));
+});
+
+document.querySelector('#btn_2').addEventListener('click', function () {
+    popupView.show(document.querySelector('#popup_2'), function () {
+        console.log('show do something');
+    });
+});
+
+document.querySelector('#btn_3').addEventListener('click', function () {
+    popupView.show(document.querySelector('#popup_3'), '', function () {
+        console.log('CLOSE');
+    });
+});
+
+</script>
+</html>

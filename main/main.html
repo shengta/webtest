@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from main</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/preloadjs-0.3.0.min.js"></script>
+<script src="main.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/gamelogo.png", id:"gamelogo"},
+		{src:"images/gamelogo_1.png", id:"gamelogo_1"},
+		{src:"images/mainci.png", id:"mainci"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+	windowResize();
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.main();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(24);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+(function($){
+  $(window).resize(function(){
+     windowResize();                      
+  });         
+})(jQuery);
+
+function windowResize(){
+   stage.canvas.width = window.innerWidth;
+   stage.canvas.height = window.innerHeight;    
+   var test = (window.innerHeight/1000)*1;
+   exportRoot.scaleX = exportRoot.scaleY = test;
+}
+
+
+
+</script>
+</head>
+
+<body onload="init();" style="background-color:#D4D4D4">
+	<canvas id="canvas" width="1000" height="920" style="background-color:#33FFFF"></canvas>
+</body>
+</html>
